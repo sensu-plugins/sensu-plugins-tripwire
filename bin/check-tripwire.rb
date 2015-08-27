@@ -133,7 +133,7 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
         current_violation[:level] = m[1].to_i
       end
 
-      if (m = line.match(violation_type)) && current_violation # rubocop:disable AssignmentInCondition
+      if (m = line.match(violation_type)) && current_violation
         current_list = []
         current_violation[m[1]] = current_list
       end
