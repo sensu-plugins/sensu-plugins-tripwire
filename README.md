@@ -5,7 +5,6 @@
 [![Code Climate](https://codeclimate.com/github/sensu-plugins/sensu-plugins-tripwire/badges/gpa.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-tripwire)
 [![Test Coverage](https://codeclimate.com/github/sensu-plugins/sensu-plugins-tripwire/badges/coverage.svg)](https://codeclimate.com/github/sensu-plugins/sensu-plugins-tripwire)
 [![Dependency Status](https://gemnasium.com/sensu-plugins/sensu-plugins-tripwire.svg)](https://gemnasium.com/sensu-plugins/sensu-plugins-tripwire)
-[ ![Codeship Status for sensu-plugins/sensu-plugins-tripwire](https://codeship.com/projects/9cd33ec0-dc04-0132-3508-1e3fe125131b/status?branch=master)](https://codeship.com/projects/79859)
 
 ## Functionality
 
