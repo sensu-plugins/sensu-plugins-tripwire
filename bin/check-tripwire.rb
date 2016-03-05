@@ -163,6 +163,6 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
         warning violation.to_json
       end
     end
-    ok 'no violations' if violations.size == 0
+    ok 'no violations' if violations.size == 0 # rubocop:disable Style/ZeroLengthPredicate
   end
 end
