@@ -24,7 +24,7 @@ deploy:
     secure: hYbdTFcxjXH7ME5fvYnF1h4L6DA4HBNK67nN4z+VPi9E/CcoTXIVpc9SZZv9D8C0EDLgHY6xnjxxoVpjgfAafXj91GLR9fuFnq5kQo9opCVNzzkQXs4IYt/CmJQYKjTXLLiCDnVsRDWh0v7BzG62tzxJb6BXyFC/csC0PSePgd4=
   gem: sensu-plugins-tripwire
   on:
-    ags: true
+    tags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
