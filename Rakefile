@@ -27,7 +27,7 @@ end
 
 desc 'Test for binstubs'
 task :check_binstubs do
-  bin_list = Gem::Specification.load('sensu-plugins-rabbitmq.gemspec').executables
+  bin_list = Gem::Specification.load('sensu-plugins-tripwire.gemspec').executables
   bin_list.each do |b|
     `which #{ b }`
     unless $CHILD_STATUS.success?
