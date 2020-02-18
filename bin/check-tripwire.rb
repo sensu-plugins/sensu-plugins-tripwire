@@ -98,7 +98,7 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
         open(tmp_db, 'wb') do |db|
           db << open(database).read
         end
-      rescue => e
+      rescue StandardError => e
         critical "Error loading database from #{database}. Message #{e.message}"
         exit 1
       end
@@ -150,7 +150,7 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
       report = run_tripwire.split("\n")
       violations = parse_violations report
       cleanup
-    rescue => e
+    rescue StandardError => e
       cleanup
       warning "Error running tripwire. #{e. message}"
       exit 1
