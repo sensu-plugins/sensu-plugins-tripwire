@@ -156,13 +156,13 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
       exit 1
     end
 
-    violations.each do |_name, violation|
+    violations.each_value do |violation|
       if violation[:level] >= config[:critical].to_i
         critical violation.to_json
       elsif violation[:level] >= config[:warn].to_i
         warning violation.to_json
       end
     end
-    ok 'no violations' if violations.size == 0 # rubocop:disable Style/ZeroLengthPredicate
+    ok 'no violations' if violations.size.zero? # rubocop:disable Style/ZeroLengthPredicate
   end
 end
