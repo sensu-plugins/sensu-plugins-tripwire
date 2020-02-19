@@ -1,12 +1,10 @@
 language: ruby
+services: docker
 cache:
 - bundler
 install:
 - bundle install
 rvm:
-- 2.0
-- 2.1
-- 2.2
 - 2.3.0
 - 2.4.1
 notifications:
@@ -19,8 +17,10 @@ script:
 - bundle exec rake default
 - gem build sensu-plugins-tripwire.gemspec
 - gem install sensu-plugins-tripwire-*.gem
+before_deploy:
+- bash -c "[ ! -d bonsai/ ] && git clone https://github.com/sensu/sensu-go-bonsai-asset.git bonsai || echo 'bonsai/ exists, skipping git clone'"
 deploy:
-  provider: rubygems
+- provider: rubygems
   api_key:
     secure: hYbdTFcxjXH7ME5fvYnF1h4L6DA4HBNK67nN4z+VPi9E/CcoTXIVpc9SZZv9D8C0EDLgHY6xnjxxoVpjgfAafXj91GLR9fuFnq5kQo9opCVNzzkQXs4IYt/CmJQYKjTXLLiCDnVsRDWh0v7BzG62tzxJb6BXyFC/csC0PSePgd4=
   gem: sensu-plugins-tripwire
@@ -33,3 +33,10 @@ deploy:
     rvm: 2.3.0
     rvm: 2.4.1
     repo: sensu-plugins/sensu-plugins-tripwire
+- provider: script
+  script: bonsai/ruby-runtime/travis-build-ruby-plugin-assets.sh sensu-plugins-tripwire
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    rvm: 2.4.1 
