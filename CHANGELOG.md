@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+## [1.1.2] - 2020-02-18
+### Changed
+- Using GitHub release draft to cut a release.
+
 ## [1.1.1] - 2020-02-18
 ### Changed
 - Added GitHub token to Travis for release artifact uploads.
