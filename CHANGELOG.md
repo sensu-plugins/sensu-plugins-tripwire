@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+## [1.1.1] - 2020-02-18
+### Changed
+- Added GitHub token to Travis for release artifact uploads.
+
 ## [1.1.0] - 2020-02-18
 ### Added
 - Building Sensu Go asset release artifacts for Bonsai.
