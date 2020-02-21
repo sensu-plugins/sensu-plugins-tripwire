@@ -61,6 +61,12 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
          description: 'Password to unlock the keyfile',
          required: false
 
+  option :configfile,
+         short: '-f path/to/configfile',
+         long: '--config-file path/to/configfile',
+         description: 'Configuration to use for the check',
+         required: false
+
   option :database,
          short: '-d path_or_url_to_database',
          long: '--database path_or_url_to_database. if an http url is supplied the database will be retrieved prior to the check',
@@ -76,16 +82,18 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
 
   option :warn,
          short: '-w warn severity',
-         long: '--warn warining severity',
+         long: '--warn warning severity',
          description: 'Tripwire severity greater than this is warning',
          required: false,
          default: '66'
 
   def run_tripwire
-    site_key = (config[:sitekey] && "-S #{config[:sitekey]}") || ''
+    command = "#{config[:binary]} --check"
+    command << " -S #{config[:sitekey]}" if config[:sitekey]
+    command << " -c #{config[:configfile]}" if config[:configfile]
     database = retrieve_database
-    database = (database && "-d #{database}") || ''
-    `#{config[:binary]} --check #{site_key} #{database}`
+    command << " -d #{database}" if database
+    `#{command}`
   end
 
   def retrieve_database
