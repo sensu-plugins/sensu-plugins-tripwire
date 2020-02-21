@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+## [1.3.1] - 2020-02-21
+### Changed
+- Patch release to trigger new Bonsai assets
+
 ## [1.3.0] - 2020-02-21
 ### Changed
 - Exit OK if there are only minor violations (fixing "Check did not exit!")
