@@ -5,6 +5,10 @@ This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachang
 
 ## [Unreleased]
 
+## [1.3.0] - 2020-02-21
+### Changed
+- Exit OK if there are only minor violations (fixing "Check did not exit!")
+
 ## [1.2.0] - 2020-02-21
 ### Added
 - Support for a Tripwire configuration file (e.g. `--config-file tw.cfg`).
