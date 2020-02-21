@@ -172,5 +172,6 @@ class TripwireCheck < Sensu::Plugin::Check::CLI
       end
     end
     ok 'no violations' if violations.size.zero?
+    ok 'minor violations'
   end
 end
