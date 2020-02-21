@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This CHANGELOG follows the format listed at [Keep A Changelog](http://keepachangelog.com/)
 
 ## [Unreleased]
+
+## [1.2.0] - 2020-02-21
+### Added
+- Support for a Tripwire configuration file (e.g. `--config-file tw.cfg`).
+
 ## [1.1.2] - 2020-02-18
 ### Changed
 - Using GitHub release draft to cut a release.
